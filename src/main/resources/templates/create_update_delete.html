@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{create}" th:object="${SaveMenu}" method="post">
+        <input type="text" th:field="*{menuName}" placeholder="menuName">
+        <input type="text" th:field="*{menuUrl}" placeholder="menuUrl">
+        <input type="text" th:field="*{menuTarget}" placeholder="menuTarget">
+        <input type="text" th:field="*{menuClass}" placeholder="menuClass">
+        <input type="text" th:field="*{menuSort}" placeholder="menuSort">
+        <input type="text" th:field="*{menuParentId}" placeholder="menuParentId">
+        <input type="text" th:field="*{menuRole}" placeholder="menuRole">
+        <input type="text" th:field="*{menuUse}" placeholder="menuUse">
+        <input type="submit" value="create">
+    </form>
+    <form th:action="@{update}" th:object="${SaveMenu}" method="post">
+        <input type="hidden" name="_method" value="PUT"/>
+        <input type="text" th:field="*{menuName}" placeholder="menuName">
+        <input type="text" th:field="*{menuUrl}" placeholder="menuUrl">
+        <input type="text" th:field="*{menuTarget}" placeholder="menuTarget">
+        <input type="text" th:field="*{menuClass}" placeholder="menuClass">
+        <input type="text" th:field="*{menuSort}" placeholder="menuSort">
+        <input type="text" th:field="*{menuParentId}" placeholder="menuParentId">
+        <input type="text" th:field="*{menuRole}" placeholder="menuRole">
+        <input type="text" th:field="*{menuUse}" placeholder="menuUse">
+        <input type="text" th:field="*{menuId}" placeholder="menuId">
+        <input type="submit" value="update">
+    </form>
+    <form th:action="@{delete}" method="post">
+        <input type="hidden" name="_method" value="DELETE"/>
+        <input type="text" th:field="" placeholder="">
+        <input type="submit" value="delete">
+    </form>
+</body>
+</html>
