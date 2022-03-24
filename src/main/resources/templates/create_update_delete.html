@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form th:action="@{create}" th:object="${SaveMenu}" method="post">
+    <form th:action="@{create}" th:object="${saveMenu}" method="post">
         <input type="text" th:field="*{menuName}" placeholder="menuName">
         <input type="text" th:field="*{menuUrl}" placeholder="menuUrl">
         <input type="text" th:field="*{menuTarget}" placeholder="menuTarget">
@@ -16,7 +16,7 @@
         <input type="text" th:field="*{menuUse}" placeholder="menuUse">
         <input type="submit" value="create">
     </form>
-    <form th:action="@{update}" th:object="${SaveMenu}" method="post">
+    <form th:action="@{update}" th:object="${saveMenu}" method="post">
         <input type="hidden" name="_method" value="PUT"/>
         <input type="text" th:field="*{menuName}" placeholder="menuName">
         <input type="text" th:field="*{menuUrl}" placeholder="menuUrl">
@@ -31,8 +31,9 @@
     </form>
     <form th:action="@{delete}" method="post">
         <input type="hidden" name="_method" value="DELETE"/>
-        <input type="text" th:field="" placeholder="">
+        <input type="text" th:field="${saveMenu.menuId}" placeholder="menuId">
         <input type="submit" value="delete">
     </form>
+    <a href="rootMenu">Menu</a>
 </body>
 </html>
